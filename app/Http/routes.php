@@ -17,4 +17,6 @@ $router->get('auth/login', 'AuthController@login');
 $router->post('auth/login', 'AuthController@loginIn');
 $router->post('auth/login/check', 'AuthController@check');
 
+$router->post('form/validate', 'FormController@validate');
+
 

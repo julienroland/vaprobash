@@ -12,7 +12,7 @@ define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections'], 
         template: {require: 'text!components/about-page/about.html'}
     });
     ko.components.register('admin', {
-        template: {require: 'text!components/admin/index.html'}
+        template: {require: 'text!admin.html'}
     });
 
     // [Scaffolded component registrations will be inserted here. To retain this feature, don't remove this comment.]

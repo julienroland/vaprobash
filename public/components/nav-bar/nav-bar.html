@@ -20,8 +20,17 @@
                 <li data-bind="css: { active: route().page === 'home-page' }">
                     <a href="#">Home</a>
                 </li>
-                <li>
-                    <a href="/">Accueil</a>
+
+                <li data-bind="css: { active: route().page === 'auth/login' }">
+                    <a href="#auth/login">Login</a>
+                </li>
+
+                <li data-bind="css: { active: route().page === 'about-page' }">
+                    <a href="#about">About</a>
+                </li>
+
+                <li data-bind="css: { active: route().page === 'admin' }">
+                    <a href="admin.html">Admin</a>
                 </li>
             </ul>
 

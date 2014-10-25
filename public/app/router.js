@@ -23,10 +23,6 @@ define(["knockout", "crossroads", "hasher", "filters"], function (ko, crossroads
     }
 
 
-    function beforeFilter(beforeFilter) {
-        console.log(beforeFilter);
-    }
-
     function activateCrossroads() {
         function parseHash(newHash, oldHash) {
             crossroads.parse(newHash);

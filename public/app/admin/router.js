@@ -4,13 +4,13 @@ define(["knockout", "crossroads", "hasher", "filters"], function (ko, crossroads
         routes: [
             {url: '', params: {page: 'home-page'}},
             {url: 'admin', params: {page: 'admin'}},
+            {url: 'article', params: {page: 'article'}},
         ]
     });
 
     function Router(config) {
         new filters({before: 'auth'});
         var currentRoute = this.currentRoute = ko.observable({});
-
         ko.utils.arrayForEach(config.routes, function (route) {
             crossroads.addRoute(route.url, function (requestParams) {
                 new filters(route.params);
@@ -21,10 +21,6 @@ define(["knockout", "crossroads", "hasher", "filters"], function (ko, crossroads
         activateCrossroads();
     }
 
-
-    function beforeFilter(beforeFilter) {
-        console.log(beforeFilter);
-    }
 
     function activateCrossroads() {
         function parseHash(newHash, oldHash) {

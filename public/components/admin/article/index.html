@@ -1,0 +1,9 @@
+<div class="article-listing" style="float: left;width:50%;">
+    <h2>Listing des articles</h2>
+    <a class="btn btn-primary" data-bind="click: createNewArticle">Créer un nouvelle article</a>
+</div>
+<div class="saveEdit" id="saveEdit" style="float: left;width:50%;"
+     data-bind="visible : saveEdit, component:{name:'article-tab',params:{ title: titleTypeAction, tab : tabs}}">
+
+
+</div>

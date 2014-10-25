@@ -1,7 +1,17 @@
-define(['knockout', 'text!./login.html', 'hasher'], function (ko, templateMarkup, hasher) {
-
+define(['knockout', 'text!./login.html', 'hasher', 'authEntity', 'validator'], function (ko, templateMarkup, hasher) {
     function Login(params) {
         this.email = ko.observable();
+        this.validate = function (data, $event) {
+            var $target = $($event.target);
+            var $name = $target.attr('name');
+
+            var aInput = {};
+            aInput[$name] = this.email()
+            var aRules = {};
+            aRules[$name] = new Auth().rules[$name];
+            new Validator(aInput, aRules, $target);
+
+        }
         this.authLogin = function () {
             $.post('/auth/login', $(arguments).serialize(), function (oData) {
                 if (oData) {

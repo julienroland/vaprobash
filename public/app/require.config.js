@@ -7,21 +7,28 @@ var require = {
         "hasher": "bower_modules/hasher/dist/js/hasher.min",
         "jquery": "bower_modules/jquery/dist/jquery",
         "knockout": "bower_modules/knockout/dist/knockout",
+        "tweenlite": "js/tweenlite",
         "knockout-projections": "bower_modules/knockout-projections/dist/knockout-projections",
         "signals": "bower_modules/js-signals/dist/signals.min",
         "text": "bower_modules/requirejs-text/text",
-        "filters": "app/filters/filters",
         /* *
          * Filers
          *
          * */
+        "filters": "app/filters/filters",
         "authFilter": "app/filters/authFilter",
         "guestFilter": "app/filters/guestFilter",
         /* *
          * Entites
          *
          * */
-        "authEntity": "entities/auth"
+        "authEntity": "entities/auth",
+        /* *
+         * Class
+         *
+         * */
+        "validatorMessage": "vendor/validator/message",
+        "validator": "vendor/validator/validator"
     },
     shim: {
         "bootstrap": {deps: ["jquery"]}

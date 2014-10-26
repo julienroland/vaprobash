@@ -30,7 +30,7 @@ define(["knockout", "crossroads", "hasher", "filters"], function (ko, crossroads
         crossroads.normalizeFn = crossroads.NORM_AS_OBJECT;
         hasher.initialized.add(parseHash);
         hasher.changed.add(parseHash);
-        hasher.prependHash = '!/';
+        hasher.prependHash = '!';
         hasher.init();
     }
 });

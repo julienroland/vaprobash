@@ -6,8 +6,7 @@ function authFilter() {
             isAuth = boolean;
         });
         if (!isAuth && typeof isAuth !== "undefined") {
-            //location.replace('/');
-            hasher.replaceHash('auth/login');
+            hasher.replaceHash('/auth/login');
         }
     })
 }

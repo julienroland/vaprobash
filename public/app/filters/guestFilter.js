@@ -7,7 +7,8 @@ function guestFilter() {
         });
         if (isAuth && typeof isAuth !== "undefined") {
             console.log(document.referrer);
-            hasher.setHash('');
+            console.log(hasher);
+            hasher.setHash('/');
         }
     })
 }

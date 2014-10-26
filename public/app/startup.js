@@ -3,7 +3,6 @@ define(['jquery', 'knockout', './router', 'bootstrap', 'knockout-projections'], 
     // Components can be packaged as AMD modules, such as the following:
     ko.components.register('nav-bar', {require: 'components/nav-bar/nav-bar'});
     ko.components.register('home-page', {require: 'components/home-page/home'});
-    ko.components.register('programme-grid', {require: 'components/programme-grid/programme-grid'});
     ko.components.register('auth/login', {require: 'components/auth/login/login'});
 
 

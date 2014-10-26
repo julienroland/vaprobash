@@ -1,15 +1,27 @@
-define(["knockout", "text!./index.html", "tweenlite",], function (ko, indexTemplate) {
+define(["knockout", "text!./index.html", "tab", "tweenlite"], function (ko, indexTemplate, tabulous) {
     function indexViewModel(route) {
-        this.saveEdit = ko.observable(true);
-        this.tabs = ko.observable(0);
-        this.titleTypeAction = ko.observable();
-        this.message = ko.observable('Welcome to Knockoutjs!');
-        this.createNewArticle = function () {
+        var self = this;
+        ko.components.clearCachedDefinition('article-tab')
+        self.saveEdit = ko.observable(true);
+        self.tabs = ko.observableArray();
+        self.nbTabs = ko.observable(0);
+        self.titleTypeAction = ko.observable();
+        self.message = ko.observable('Welcome to Knockoutjs!');
+        self.createNewArticle = function () {
             console.log('create');
-            //ko.components.defaultLoader.loadTemplate('article-tab');
-            this.tabs(this.tabs() + 1);
-            this.titleTypeAction('Créer un nouvel article');
-            this.saveEdit(true);
+            self.titleTypeAction('Créer un nouvel article')
+            ko.components.get('article-tab', function (template) {
+                console.log(template[0]);
+                self.nbTabs(self.nbTabs() + 1);
+                self.tabs.push({
+                    tabNumber: self.nbTabs(),
+                    template: template.template[0],
+                    title: self.titleTypeAction()
+                });
+            });
+            console.log(self.tabs());
+            self.saveEdit(true);
+            $('#tabs').tabulous();
             console.log(TweenLite.to('#saveEdit', 2, {backgroundColor: "#ff0000"}));
 
         }

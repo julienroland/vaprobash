@@ -1,5 +1,5 @@
 define(["knockout", "crossroads", "hasher", "filters"], function (ko, crossroads, hasher) {
-
+    var lang = window.location.pathname.split("/")[1].length == 2 ? window.location.pathname.split("/")[1] : false;
     return new Router({
         routes: [
             {url: '', params: {page: 'home-page', before: 'auth'}},
@@ -31,6 +31,7 @@ define(["knockout", "crossroads", "hasher", "filters"], function (ko, crossroads
         crossroads.normalizeFn = crossroads.NORM_AS_OBJECT;
         hasher.initialized.add(parseHash);
         hasher.changed.add(parseHash);
+        hasher.prependHash = '!';
         hasher.init();
     }
 });
